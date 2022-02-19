@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Qin to do チーム開発
 
-## Getting Started
+## 技術選定
 
-First, run the development server:
+- React
+- TypeScript
+- TailwindCSS
+- Firebase
+- ESLint
+- Prettier
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Git ブランチルール
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`main`
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- マージされると本番に自動反映されます。
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+`develop`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- 本番反映前に確認するための環境（ステージング環境）。
+- 常駐しているブランチで、feature からの変更を受け付け、main にマージする。
 
-## Learn More
+`feature/あなたのGitHub名-*`
 
-To learn more about Next.js, take a look at the following resources:
+- 開発にはここを用いる。
+- 必ず develop から分岐し、develop にマージする。
+- 「あなたの GitHub 名」にはアカウント名を入力。
+- \*は開発する対象の ISSUE の番号を記入。
+- 例: feature/lightsound-#1
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+main, develop に直接 push してはいけません。基本的に皆さんが触って良いのは feature/あなたの GitHub 名\_\* ブランチだけです。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## コミットメッセージ書き方
 
-## Deploy on Vercel
+- feat: 新しい機能
+- fix: バグの修正
+- docs: ドキュメントのみが変更されます
+- style: コードの意味に影響を与えない変更（空白、書式設定、セミコロンの欠落など）
+- refactor: バグを修正せず、機能を追加しないコード変更
+- perf: パフォーマンスを向上させるコード変更
+- test: 不足しているテストを追加するか、既存のテストを修正します
+- chore: ビルドプロセスまたはドキュメント生成などの補助ツールやライブラリへの変更
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## そのほか
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [デザイン](https://www.figma.com/file/SNPCXNu0V6k6wHS4piYyS2/Qin-Todo?node-id=0%3A1)
