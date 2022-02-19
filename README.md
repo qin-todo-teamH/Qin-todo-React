@@ -1,46 +1,34 @@
-# Qin to do チーム開発
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## 技術選定
+## Getting Started
 
-- React
-- TypeScript
-- TailwindCSS
-- Firebase
-- ESLint
-- Prettier
+First, run the development server:
 
-## Git ブランチルール
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-`main`
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- マージされると本番に自動反映されます。
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-`develop`
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-- 本番反映前に確認するための環境（ステージング環境）。
-- 常駐しているブランチで、feature からの変更を受け付け、main にマージする。
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-`feature/あなたのGitHub名-*`
+## Learn More
 
-- 開発にはここを用いる。
-- 必ず develop から分岐し、develop にマージする。
-- 「あなたの GitHub 名」にはアカウント名を入力。
-- \*は開発する対象の ISSUE の番号を記入。
-- 例: feature/lightsound-#1
+To learn more about Next.js, take a look at the following resources:
 
-main, develop に直接 push してはいけません。基本的に皆さんが触って良いのは feature/あなたの GitHub 名\_\* ブランチだけです。
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## コミットメッセージ書き方
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-- feat: 新しい機能
-- fix: バグの修正
-- docs: ドキュメントのみの変更
-- style: 空白、フォーマット、セミコロン追加など
-- refactor: 仕様に影響がないコード改善(リファクタ)
-- perf: パフォーマンス向上関連
-- test: テスト関連
-- chore: ビルド、補助ツール、ライブラリ関連
+## Deploy on Vercel
 
-## そのほか
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-- [デザイン](https://www.figma.com/file/SNPCXNu0V6k6wHS4piYyS2/Qin-Todo?node-id=0%3A1)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
