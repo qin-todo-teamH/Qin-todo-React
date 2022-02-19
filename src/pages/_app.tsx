@@ -1,8 +1,13 @@
-import type { AppProps } from "next/app";
-import "../styles/index.css";
+import "../style/index.css";
+import { memo } from "react";
+import { NextPage } from "next";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+const App: NextPage = ({ Component, pageProps }) => {
+  return (
+    <div>
+      <p>hello</p>
+    </div>
+  );
+};
 
-export default MyApp;
+export default memo(App);
