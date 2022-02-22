@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 
-const fairebaseConfig = {
+export const fairebaseConfig = {
   apiKey: "AIzaSyCIGQegOBv_WRcTfpGAv1sCl0_Ljve7aaQ",
   authDomain: "qin-todo-teamh.firebaseapp.com",
   projectId: "qin-todo-teamh",
