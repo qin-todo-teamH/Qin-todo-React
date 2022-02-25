@@ -3,7 +3,7 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "src/firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-const Login: NextPage = () => {
+const SignIn: NextPage = () => {
   const [user] = useAuthState(auth);
 
   return (
@@ -50,4 +50,4 @@ const UserInfo = () => {
 };
 
 
-export default Login;
+export default SignIn;
