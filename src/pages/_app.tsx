@@ -1,12 +1,11 @@
-import "../style/index.css";
+import "src/styles/index.css"
 import { memo } from "react";
 import { NextPage } from "next";
+import Login from "src/pages/login";
 
-const App: NextPage = ({ Component, pageProps }) => {
+const App: NextPage = ( ) => {
   return (
-    <div>
-      <p>hello</p>
-    </div>
+    <Login />
   );
 };
 
