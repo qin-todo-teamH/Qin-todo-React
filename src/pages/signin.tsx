@@ -2,21 +2,44 @@ import type { NextPage } from "next";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "src/firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { HiOutlineLogout } from "react-icons/hi";
 
-const SignIn: NextPage = () => {
+export const SignIn: NextPage = () => {
   const [user] = useAuthState(auth);
 
   return (
-    <div>
-      {user ? (
-        <>
-          <UserInfo />
-          <SignOutButton />
-        </>
-      ) : (
-        <SignInButton />
-      )}
-    </div>
+    <>
+      <div className="">
+        <div className="flex">
+          <div className="h-screen w-1/2 text-center mx-auto">
+            <h1 className="text-3xl font-bold font-mono tracking-tighter">
+              アカウントの連携
+            </h1>
+
+            {user ? (
+              <>
+                <UserInfo />
+                <SignOutButton />
+              </>
+            ) : (
+              <SignInButton />
+            )}
+          </div>
+          <div className="w-80 h-36 rounded-2xl shadow-md mx-8">
+            <div className="m-6">
+              {user ? (
+                <>
+                  <UserInfo />
+                  <SignOutButton />
+                </>
+              ) : (
+                <SignInButton />
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
@@ -27,27 +50,35 @@ const SignInButton = () => {
 
   return (
     <button onClick={signInWithGoogle}>
-      <p>Googleでサインイン</p>
+      <p>Googleでログイン</p>
     </button>
   );
 };
 
 const SignOutButton = () => {
   return (
-    <button onClick={() => auth.signOut()}>
-      <p>Googleでサインアウト</p>
-    </button>
+    <div className="flex mt-7">
+      <HiOutlineLogout className="my-auto text-red-700" />
+      <button onClick={() => auth.signOut()}>
+        <p className="text-red-700 font-bold font-mono tracking-tighter text-sm mx-2">
+          ログアウト
+        </p>
+      </button>
+    </div>
   );
 };
 
 const UserInfo = () => {
   return (
-    <div>
-      <img src={auth.currentUser.photoURL} alt="UserIcon" />
-      <p>{auth.currentUser.displayName}</p>
+    <div className="flex">
+      <img
+        src={auth.currentUser.photoURL}
+        alt="UserIcon"
+        className="rounded-full w-12"
+      />
+      <p className="font-bold font-mono tracking-tighter px-3 py-1">
+        {auth.currentUser.displayName}
+      </p>
     </div>
   );
 };
-
-
-export default SignIn;
