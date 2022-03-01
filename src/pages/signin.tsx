@@ -3,12 +3,14 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "src/firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { HiOutlineLogout } from "react-icons/hi";
+import { Header } from "src/components/Layout/Header";
 
-export const SignIn: NextPage = () => {
+const SignIn: NextPage = () => {
   const [user] = useAuthState(auth);
 
   return (
     <>
+      <Header title="signin"></Header>
       <div className="">
         <div className="flex">
           <div className="h-screen w-1/2 text-center mx-auto">
@@ -42,6 +44,8 @@ export const SignIn: NextPage = () => {
     </>
   );
 };
+
+export default SignIn;
 
 const SignInButton = () => {
   const signInWithGoogle = () => {

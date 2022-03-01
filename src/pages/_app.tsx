@@ -1,12 +1,10 @@
-import "src/styles/index.css"
+import "src/styles/index.css";
 import { memo } from "react";
 import { NextPage } from "next";
-import { SignIn } from "src/pages/signin";
+import type { AppProps } from "next/app";
 
-const App: NextPage = ( ) => {
-  return (
-    <SignIn />
-  );
-};
+function App({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
+}
 
 export default memo(App);
